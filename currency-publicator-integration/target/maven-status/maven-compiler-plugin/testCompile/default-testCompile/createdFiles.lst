@@ -1,0 +1,4 @@
+pl\com\softproject\currency\integration\sources\openexchangerates\assembler\ImportDataAssemblerTest.class
+pl\com\softproject\currency\integration\sources\openexchangerates\HistoricalRateServiceTest.class
+pl\com\softproject\currency\integration\sources\openexchangerates\CurrentRateServiceTest.class
+pl\com\softproject\currency\integration\sources\openexchangerates\OpenExchangeRatesSourceTest.class

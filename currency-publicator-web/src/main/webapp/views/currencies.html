@@ -1,0 +1,64 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-9">
+        <h2>Supported Currencies</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a ui-sref="app.publications">Home</a>
+            </li>
+            <li class="active">
+                <strong>Currencies</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="alert alert-success">
+        List of supported currencies. Click to see historical changes of USD i selected currency.
+    </div>
+
+
+
+    <div class="row">
+
+        <div  ng-hide="hideLoader">
+            <div class="sk-wave">
+                <div class="sk-rect sk-rect1"></div>
+                <div class="sk-rect sk-rect2"></div>
+                <div class="sk-rect sk-rect3"></div>
+                <div class="sk-rect sk-rect4"></div>
+                <div class="sk-rect sk-rect5"></div>
+            </div>
+        </div>
+
+
+        <form  ng-hide="!hideLoader" class="form-horizontal">
+
+            <div class="form-group"><label class="col-lg-3 control-label">Currency</label>
+
+                <div class="col-lg-8">
+                    <input type="text" placeholder="search" ng-model="countryCodeSearch1"
+                           class="form-control">
+                </div>
+            </div>
+        </form>
+
+        <div class="col-lg-4" ng-repeat="curr in currenciesArray | filter: countryCodeSearch1">
+            <div class="contact-box" style="height: 150px;">
+                <a ui-sref="profile">
+
+                    <div class="col-sm-12">
+                        <h3><strong>{{curr.value}}</strong></h3>
+
+                        <p>Currency code: {{curr.key}}<br/></p>
+                        <center>
+                            <div ui-sref="app.history({'key': curr.key})" class="btn btn-sm btn-success">Show History
+                                <div>
+                        </center>
+                    </div>
+                    <div class="clearfix"></div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>

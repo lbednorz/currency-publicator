@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Swagger UI</title>
+        <link href='css/typography.css' media='screen' rel='stylesheet' type='text/css'/>
+        <link href='css/reset.css' media='screen' rel='stylesheet' type='text/css'/>
+        <link href='css/screen.css' media='screen' rel='stylesheet' type='text/css'/>
+        <link href='css/reset.css' media='print' rel='stylesheet' type='text/css'/>
+        <link href='css/screen.css' media='print' rel='stylesheet' type='text/css'/>
+        <script type="text/javascript" src="lib/shred.bundle.js"></script>
+        <script src='lib/jquery-1.8.0.min.js' type='text/javascript'></script>
+        <script src='lib/jquery.slideto.min.js' type='text/javascript'></script>
+        <script src='lib/jquery.wiggle.min.js' type='text/javascript'></script>
+        <script src='lib/jquery.ba-bbq.min.js' type='text/javascript'></script>
+        <script src='lib/handlebars-2.0.0.js' type='text/javascript'></script>
+        <script src='lib/underscore-min.js' type='text/javascript'></script>
+        <script src='lib/backbone-min.js' type='text/javascript'></script>
+        <script src='lib/swagger-client.js' type='text/javascript'></script>
+        <script src='swagger-ui.js' type='text/javascript'></script>
+        <script src='lib/highlight.7.3.pack.js' type='text/javascript'></script>
+        <script src='lib/marked.js' type='text/javascript'></script>
+
+        <script src="../angular/angular.min.js"></script>
+        <script src="../jquery/dist/jquery.min.js"></script>
+        <script src="../bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="app.js"></script>
+        <link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.min.css">
+
+        <!-- enabling this will enable oauth2 implicit scope support -->
+        <script src='lib/swagger-oauth.js' type='text/javascript'></script>
+        <script type="text/javascript">
+            $(function () {
+                window.swaggerUi = new SwaggerUi({
+                    url: "",
+                    dom_id: "swagger-ui-container",
+                    supportedSubmitMethods: ['get', 'post', 'put', 'delete'],
+                    onComplete: function (swaggerApi, swaggerUi) {
+                        $('pre code').each(function (i, e) {
+                            hljs.highlightBlock(e);
+                        });
+                    },
+                    onFailure: function (data) {
+                    },
+                    docExpansion: "none",
+                    sorter: "alpha"
+                });
+                window.swaggerUi.load();
+            });
+        </script>
+
+    </head>
+
+     <body class="swagger-section" ng-app="docsApp" ng-controller="docsController">
+        <div id='header' style="  font-family: Verdana;">
+            <div>
+                <form class="form-horizontal">
+                    <div class="form-group">
+
+                        <div class="col-sm-10">
+                            <input  style="display: none;" ng-change="updateUrl();" ng-model="search.project.host" type="text" class="form-control" id="inputHost" placeholder="http://localhost:8080/">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="selectProject" style="margin-left:20px;  ">Choose Project API</label>
+                        <div style="margin:20px;">
+                            <select ng-change="updateUrl();" class="form-control" id="selectProject" ng-options="project.name for project in projects" ng-model="search.project"></select>
+<!--                                <select ng-change="updateUrl();" ng-model="search.project" class="form-control" id="selectProject">
+                                    <option ng-repeat="project in projects">{{project.name}}</option>
+                                </select>  -->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10" >
+                            <div class="checkbox" style="margin-left:20px;  ">
+                                <label>
+                                    <input ng-model="showInput" type="checkbox"> Change address
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-show="showInput" class="form-group">
+                        <label for="input_baseUrl" class="col-sm-2 control-label">URL</label>
+                        <div class="col-sm-10">
+
+                            <input ng-model="search.url" id="input_baseUrl" name="baseUrl"  type="text" class="form-control" placeholder="http://localhost:8080/">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button   id="explore" href="#" type="submit" style="color:#1f90d8; margin:20px;"> View API</button>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="message-bar" class="swagger-ui-wrap" style="padding: 30px;">&nbsp;</div>
+        <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
+    </body>
+</html>

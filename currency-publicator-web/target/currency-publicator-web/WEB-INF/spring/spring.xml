@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+				http://www.springframework.org/schema/context
+				http://www.springframework.org/schema/context/spring-context-4.0.xsd
+				http://www.springframework.org/schema/tx
+				http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+				http://www.springframework.org/schema/data/jpa
+				http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+                                http://www.springframework.org/schema/mvc 
+                                http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!-- Basic Configurations -->
+    <context:annotation-config/>    
+    <context:property-placeholder location="classpath:application.properties"/>
+
+    <context:component-scan base-package="pl.com.softproject.currency"/>
+    
+    <!-- SpringData -->
+    <import resource="spring-jpa.xml"/>
+    <!--import resource="spring-security.xml"/-->
+    <import resource="spring-mvc.xml"/>
+    
+    
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"/>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+    
+    <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
+    <jpa:repositories base-package="pl.com.softproject.currency.repository"
+                      entity-manager-factory-ref="entityManagerFactory"
+                      transaction-manager-ref="transactionManager"/>
+
+ 
+
+    <!--multipart resolver-->
+    <bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver">
+        <property name="maxUploadSize" value="52428800" /><!--50 mb-->
+    </bean>
+
+
+    <bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+        <property name="messageConverters">
+            <list>
+                <bean class="org.springframework.http.converter.FormHttpMessageConverter"/>
+                <bean class="org.springframework.http.converter.StringHttpMessageConverter" />
+                <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+            </list>
+        </property>
+    </bean>
+    
+</beans>

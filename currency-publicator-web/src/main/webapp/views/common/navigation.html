@@ -1,0 +1,42 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul side-navigation class="nav" id="side-menu">
+            <li class="nav-header">
+
+                <div class="dropdown profile-element" dropdown>
+                    <img alt="image" class="img-circle" src="img/profile_small.jpg"/>
+
+                            <span class="clear">
+                                <span class="block m-t-xs">
+                                    <strong class="font-bold">Detault User</strong>
+                             </span>
+                                <span class="text-muted text-xs block">
+                               some user</span>
+                            </span>
+
+                </div>
+                <div class="logo-element">
+                    IN+
+                </div>
+            </li>
+
+            <li ng-class="{active: $state.includes('dashboard')}">
+                <a ui-sref="app.dashboard"><i class="fa fa-paper-plane"></i> <span class="nav-label">Dashboard</span> </a>
+
+            </li>
+
+            <li ng-class="{active: $state.includes('currencies')}">
+                <a ui-sref="app.currencies"><i class="fa fa-book"></i> <span class="nav-label">Currencies</span> </a>
+            </li>
+
+            <li ng-class="{active: $state.includes('API_DOCS')}">
+                <a href="{{SERVER_DEF_URL}}js/swagger-ui-dist/index.html#!/rate-resource/getInitialImport"><i class="fa fa-gears"></i> <span class="nav-label">API Docs</span> </a>
+            </li>
+
+
+             
+
+
+
+    </div>
+</nav>

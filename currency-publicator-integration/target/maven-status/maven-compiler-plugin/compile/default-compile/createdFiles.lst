@@ -1,0 +1,11 @@
+pl\com\softproject\currency\integration\sources\openexchangerates\model\ImportOpenExchangeDTO.class
+pl\com\softproject\currency\integration\services\HistoricalRatesService.class
+pl\com\softproject\currency\integration\sources\exceptions\LoadRatesException.class
+pl\com\softproject\currency\integration\sources\Source.class
+pl\com\softproject\currency\integration\sources\model\ImportDTO.class
+pl\com\softproject\currency\integration\sources\model\SingleRateDTO.class
+pl\com\softproject\currency\integration\services\CurrentRateService.class
+pl\com\softproject\currency\integration\services\CurrentRateServiceImpl.class
+pl\com\softproject\currency\integration\sources\openexchangerates\OpenExchangeRatesSource.class
+pl\com\softproject\currency\integration\sources\openexchangerates\assembler\ImportDataAssembler.class
+pl\com\softproject\currency\integration\services\HistoricalRatesServiceImpl.class

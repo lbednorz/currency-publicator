@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/currency-publicator.iml" filepath="$PROJECT_DIR$/currency-publicator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/currency-publicator-core/currency-publicator-core.iml" filepath="$PROJECT_DIR$/currency-publicator-core/currency-publicator-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/currency-publicator-integration/currency-publicator-integration.iml" filepath="$PROJECT_DIR$/currency-publicator-integration/currency-publicator-integration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/currency-publicator-web/currency-publicator-web.iml" filepath="$PROJECT_DIR$/currency-publicator-web/currency-publicator-web.iml" />
+    </modules>
+  </component>
+</project>

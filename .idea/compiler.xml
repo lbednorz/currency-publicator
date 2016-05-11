@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Annotation profile for currency-publicator-core" enabled="true">
+        <sourceOutputDir name="target/generated-sources/apt" />
+        <sourceTestOutputDir name="target\generated-sources\apt" />
+        <outputRelativeToContentRoot value="true" />
+        <processor name="org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor" />
+        <processorPath useClasspath="true" />
+        <module name="currency-publicator-core" />
+      </profile>
+      <profile default="false" name="Annotation profile for currency-publicator-integration" enabled="true">
+        <sourceOutputDir name="target/generated-sources/apt" />
+        <sourceTestOutputDir name="target\generated-sources\apt" />
+        <outputRelativeToContentRoot value="true" />
+        <processor name="org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor" />
+        <processorPath useClasspath="true" />
+        <module name="currency-publicator-integration" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="currency-publicator" target="1.8" />
+      <module name="currency-publicator-core" target="1.8" />
+      <module name="currency-publicator-integration" target="1.8" />
+      <module name="currency-publicator-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

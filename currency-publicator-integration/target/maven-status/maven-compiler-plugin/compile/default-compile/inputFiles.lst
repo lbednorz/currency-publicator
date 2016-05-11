@@ -1,0 +1,11 @@
+D:\Programowanie\crossover\InitialProject\currency-publicator\currency-publicator-integration\src\main\java\pl\com\softproject\currency\integration\services\HistoricalRatesService.java
+D:\Programowanie\crossover\InitialProject\currency-publicator\currency-publicator-integration\src\main\java\pl\com\softproject\currency\integration\sources\Source.java
+D:\Programowanie\crossover\InitialProject\currency-publicator\currency-publicator-integration\src\main\java\pl\com\softproject\currency\integration\services\CurrentRateServiceImpl.java
+D:\Programowanie\crossover\InitialProject\currency-publicator\currency-publicator-integration\src\main\java\pl\com\softproject\currency\integration\sources\openexchangerates\OpenExchangeRatesSource.java
+D:\Programowanie\crossover\InitialProject\currency-publicator\currency-publicator-integration\src\main\java\pl\com\softproject\currency\integration\sources\openexchangerates\assembler\ImportDataAssembler.java
+D:\Programowanie\crossover\InitialProject\currency-publicator\currency-publicator-integration\src\main\java\pl\com\softproject\currency\integration\services\HistoricalRatesServiceImpl.java
+D:\Programowanie\crossover\InitialProject\currency-publicator\currency-publicator-integration\src\main\java\pl\com\softproject\currency\integration\sources\model\SingleRateDTO.java
+D:\Programowanie\crossover\InitialProject\currency-publicator\currency-publicator-integration\src\main\java\pl\com\softproject\currency\integration\services\CurrentRateService.java
+D:\Programowanie\crossover\InitialProject\currency-publicator\currency-publicator-integration\src\main\java\pl\com\softproject\currency\integration\sources\exceptions\LoadRatesException.java
+D:\Programowanie\crossover\InitialProject\currency-publicator\currency-publicator-integration\src\main\java\pl\com\softproject\currency\integration\sources\openexchangerates\model\ImportOpenExchangeDTO.java
+D:\Programowanie\crossover\InitialProject\currency-publicator\currency-publicator-integration\src\main\java\pl\com\softproject\currency\integration\sources\model\ImportDTO.java
